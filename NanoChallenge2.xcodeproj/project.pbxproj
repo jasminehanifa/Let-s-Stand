@@ -12,6 +12,11 @@
 		DCA661B22331E7EE00045700 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA661B02331E7EE00045700 /* Main.storyboard */; };
 		DCA661B42331E7EF00045700 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA661B32331E7EF00045700 /* Assets.xcassets */; };
 		DCA661B72331E7EF00045700 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA661B52331E7EF00045700 /* LaunchScreen.storyboard */; };
+		DCA661C12332557500045700 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA661C02332557500045700 /* HealthKit.framework */; };
+		DCA661C32333A79B00045700 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA661C22333A79B00045700 /* CircularProgressView.swift */; };
+		DCB63B182333CC120062C166 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB63B172333CC120062C166 /* SecondViewController.swift */; };
+		DCB63B1A2333E8B50062C166 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB63B192333E8B50062C166 /* Coin.swift */; };
+		DCB63B1C2333FD580062C166 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB63B1B2333FD580062C166 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,12 @@
 		DCA661B32331E7EF00045700 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA661B62331E7EF00045700 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCA661B82331E7EF00045700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCA661BE2332557500045700 /* NanoChallenge2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NanoChallenge2.entitlements; sourceTree = "<group>"; };
+		DCA661C02332557500045700 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		DCA661C22333A79B00045700 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		DCB63B172333CC120062C166 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		DCB63B192333E8B50062C166 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		DCB63B1B2333FD580062C166 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA661C12332557500045700 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +52,7 @@
 			children = (
 				DCA661AB2331E7EE00045700 /* NanoChallenge2 */,
 				DCA661AA2331E7EE00045700 /* Products */,
+				DCA661BF2332557500045700 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +67,27 @@
 		DCA661AB2331E7EE00045700 /* NanoChallenge2 */ = {
 			isa = PBXGroup;
 			children = (
+				DCA661BE2332557500045700 /* NanoChallenge2.entitlements */,
+				DCB63B172333CC120062C166 /* SecondViewController.swift */,
 				DCA661AC2331E7EE00045700 /* AppDelegate.swift */,
 				DCA661AE2331E7EE00045700 /* ViewController.swift */,
+				DCB63B1B2333FD580062C166 /* OnboardingViewController.swift */,
 				DCA661B02331E7EE00045700 /* Main.storyboard */,
 				DCA661B32331E7EF00045700 /* Assets.xcassets */,
 				DCA661B52331E7EF00045700 /* LaunchScreen.storyboard */,
 				DCA661B82331E7EF00045700 /* Info.plist */,
+				DCA661C22333A79B00045700 /* CircularProgressView.swift */,
+				DCB63B192333E8B50062C166 /* Coin.swift */,
 			);
 			path = NanoChallenge2;
+			sourceTree = "<group>";
+		};
+		DCA661BF2332557500045700 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCA661C02332557500045700 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +122,14 @@
 				TargetAttributes = {
 					DCA661A82331E7EE00045700 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,7 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCB63B182333CC120062C166 /* SecondViewController.swift in Sources */,
+				DCB63B1C2333FD580062C166 /* OnboardingViewController.swift in Sources */,
 				DCA661AF2331E7EE00045700 /* ViewController.swift in Sources */,
+				DCA661C32333A79B00045700 /* CircularProgressView.swift in Sources */,
+				DCB63B1A2333E8B50062C166 /* Coin.swift in Sources */,
 				DCA661AD2331E7EE00045700 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NanoChallenge2/NanoChallenge2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4H65A594JP;
 				INFOPLIST_FILE = NanoChallenge2/Info.plist;
@@ -300,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NanoChallenge2/NanoChallenge2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4H65A594JP;
 				INFOPLIST_FILE = NanoChallenge2/Info.plist;
